@@ -3,3 +3,14 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  audio(controls)
+    source(src="/test.wav" type="audio/wav")
+
+  script(type='text/javascript').
+    $(document).ready(function() {
+      console.log("This is a test");
+      var audio = new Audio('/test.wav');
+      audio.play();
+    });
+  
+
